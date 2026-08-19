@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ney Digital - Criação de sites que vendem em 7 dias em Cuiabá. Site + WhatsApp automático + AdZap. Fale no 65 99333-6651" />
+  <meta property="og:title" content="Ney Digital - Site que Vende em 7 Dias" />
+  <meta property="og:description" content="Site que vende + WhatsApp automático + AdZap. Entrega em 7 dias. Cuiabá e todo Brasil." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ney-digital.vercel.app" />
+  <meta name="theme-color" content="#D6FF00" />
+  <title>Ney Digital - Site que Vende em 7 Dias</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CONFIGURAÇÃO DA OFERTA - EDITA AQUI -->
+  <script>
+    const PROMO_ATIVA = true;
+    const VAGAS_TOTAL = 5;
+    const VAGAS_RESTANTES = 2;
+    const TEXTO_BANNER = "🔥 LANÇAMENTO: 5 VAGAS COM BÔNUS ADZAP GRÁTIS (R$497) - ATÉ SEXTA";
+    const GA4_ID = "G-XXXXXXXXXX"; 
+    const FB_PIXEL_ID = "SEU_PIXEL_ID";
+  </script>
+
+  <!-- Google Analytics 4 -->
+  <script async id="ga-script"></script>
+  <script>
+    if(GA4_ID && GA4_ID !== "G-XXXXXXXXXX"){
+      document.getElementById('ga-script').src = "https://www.googletagmanager.com/gtag/js?id="+GA4_ID;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GA4_ID);
+    } else {
+      function gtag(){console.log('GA4:', arguments)}
+    }
+  </script>
+
+  <!-- Meta Pixel - troque SEU_PIXEL_ID acima -->
+  <script>
+    if(FB_PIXEL_ID && FB_PIXEL_ID !== "SEU_PIXEL_ID"){
+      const fbDomain = "connect." + "facebook.net";
+      const fbUrl = "https://" + fbDomain + "/en_US/fbevents.js";
+      !function(f,b,e,v,n,t,s){
+        if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+        t=b.createElement(e);t.async=!0;t.src=v;
+        s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+      }(window, document,'script', fbUrl);
+      fbq('init', FB_PIXEL_ID);
+      fbq('track', 'PageView');
+    } else {
+      function fbq(){console.log('Pixel:', arguments)}
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Ney Digital",
+    "description": "Criação de sites que vendem em 7 dias",
+    "telephone": "+5565993336651",
+    "address": {"@type": "PostalAddress","addressLocality": "Cuiabá","addressRegion": "MT","addressCountry": "BR"},
+    "url": "https://ney-digital.vercel.app",
+    "priceRange": "R$ 997 - R$ 3497"
+  }
+  </script>
+</head>
+<body class="bg-[#0a0a0a] text-white antialiased">
+
+  <div id="banner-promo" class="hidden bg-[#D6FF00] text-black text-center py-2.5 px-4 text-xs md:text-sm font-black tracking-wide"></div>
+
+  <header class="flex justify-between items-center p-5 max-w-6xl mx-auto">
+    <div class="font-black text-xl tracking-tighter">NEY DIGITAL<span class="text-[#D6FF00]">.</span></div>
+    <a onclick="gtag('event','click_whatsapp',{position:'header'}); fbq('track','Contact');" href="https://wa.me/5565993336651?text=Quero%20garantir%20minha%20vaga%20Ney%20Digital" target="_blank" class="bg-[#D6FF00] text-black px-5 py-2.5 rounded-full font-bold text-sm hover:scale-105 transition">Chamar no Zap</a>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-5 py-8 md:py-16 text-center">
+    <div id="vagas-badge" class="border border-[#D6FF00]/40 text-[#D6FF00] text-[10px] font-bold tracking-[0.2em] rounded-full inline-block px-4 py-1.5"></div>
+    <h1 class="text-4xl md:text-6xl font-black mt-6 leading-[0.9]">Seu site não vende.<br><span class="text-[#D6FF00]">Eu faço um que vende<br>em 7 dias.</span></h1>
+    <p class="text-zinc-400 mt-5 max-w-2xl mx-auto">Site + WhatsApp automático + AdZap. Atendimento no 65 99333-6651. <span id="promo-desc"></span></p>
+    <a onclick="gtag('event','click_whatsapp',{position:'hero'}); fbq('track','Lead');" href="https://wa.me/5565993336651?text=Quero%20meu%20Site%20que%20Vende%20em%207%20Dias" target="_blank" class="bg-[#D6FF00] text-black inline-block mt-7 px-8 py-4 rounded-full font-black text-lg hover:scale-105 transition">Quero meu Site que Vende →</a>
+    <p id="vagas-contador" class="mt-3 text-[#D6FF00] text-xs font-bold"></p>
+  </main>
+
+  <section class="max-w-6xl mx-auto px-5 pb-12">
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-7">
+        <h3 class="font-bold">Start</h3><div class="text-3xl font-black mt-2">R$ 997</div>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-400"><li>✓ Site one-page que vende</li><li>✓ Botão WhatsApp</li><li>✓ Entrega 7 dias</li></ul>
+        <a onclick="gtag('event','click_whatsapp',{plan:'start'});" href="https://wa.me/5565993336651?text=Quero%20Start%20R$997" target="_blank" class="mt-6 block text-center border border-zinc-700 rounded-full py-3 font-bold text-sm hover:bg-zinc-800 transition">Quero Start</a>
+      </div>
+      <div class="bg-[#D6FF00] text-black rounded-3xl p-7 scale-[1.02] shadow-2xl relative">
+        <div id="pro-badge" class="bg-black text-[#D6FF00] text-[10px] font-black px-3 py-1 rounded-full inline-block tracking-widest">MAIS VENDIDO</div>
+        <h3 class="font-black mt-3 text-lg">Pro</h3><div class="text-4xl font-black mt-1">R$ 1.997</div>
+        <div id="bonus-box" class="mt-3 bg-black text-white rounded-xl p-3 text-xs"></div>
+        <ul class="mt-4 space-y-1.5 text-sm font-medium"><li>✓ Tudo do Start</li><li>✓ Copy que vende + SEO</li><li>✓ WhatsApp automático</li></ul>
+        <a onclick="gtag('event','click_whatsapp',{plan:'pro'}); fbq('track','InitiateCheckout',{value:1997});" href="https://wa.me/5565993336651?text=Quero%20Pro%20R$1997" target="_blank" class="mt-5 block text-center bg-black text-white rounded-full py-3.5 font-black hover:scale-105 transition">Quero Pro que Vende</a>
+      </div>
+      <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-7">
+        <h3 class="font-bold">Premium</h3><div class="text-3xl font-black mt-2">R$ 3.497</div>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-400"><li>✓ Tudo do Pro</li><li>✓ Tráfego + Funil completo</li><li>✓ 6 meses suporte VIP</li></ul>
+        <a onclick="gtag('event','click_whatsapp',{plan:'premium'});" href="https://wa.me/5565993336651?text=Quero%20Premium%20R$3497" target="_blank" class="mt-6 block text-center border border-zinc-700 rounded-full py-3 font-bold text-sm hover:bg-zinc-800 transition">Quero Premium</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-zinc-800 mt-10 py-10 text-center text-zinc-500 text-xs">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="font-black text-white text-sm tracking-tighter">NEY DIGITAL<span class="text-[#D6FF00]">.</span></div>
+      <p class="mt-2">Cuiabá - MT • Atendimento Brasil todo • 65 99333-6651</p>
+      <p class="mt-2 max-w-xl mx-auto text-[11px] leading-relaxed">Site focado em conversão. Não fazemos sites bonitinhos que não vendem. Fazemos site que traz cliente no WhatsApp em 7 dias com garantia.</p>
+      <p class="mt-4">© 2026 Ney Digital - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <a onclick="gtag('event','click_whatsapp',{position:'floating'}); fbq('track','Contact');" href="https://wa.me/5565993336651?text=Quero%20meu%20Site%20Ney%20Digital" target="_blank" style="position:fixed;bottom:24px;right:24px;width:62px;height:62px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:99999;box-shadow:0 8px 24px rgba(0,0,0,0.4);"><svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M19.05 4.91A9.82 9.82 0 0 0 12 0C6.48 0 2 4.48 2 10c0 1.76.46 3.47 1.32 4.98L2 22l7.19-1.88A9.82 9.82 0 0 0 12 20c5.52 0 10-4.48 10-10 0-2.67-1.04-5.18-2.95-7.09zM12 18a7.9 7.9 0 0 1-4.03-1.1l-.29-.17-4.27 1.12 1.14-4.16-.19-.3A7.9 7.9 0 0 1 4 10c0-4.41 3.59-8 8-8 2.14 0 4.15.83 5.66 2.34A7.92 7.92 0 0 1 20 10c0 4.41-3.59 8-8 8zm4.54-5.92c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08s.89 2.41 1.01 2.58c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg></a>
+
+  <script>
+    const banner = document.getElementById('banner-promo');
+    const vagasBadge = document.getElementById('vagas-badge');
+    const vagasContador = document.getElementById('vagas-contador');
+    const promoDesc = document.getElementById('promo-desc');
+    const proBadge = document.getElementById('pro-badge');
+    const bonusBox = document.getElementById('bonus-box');
+    if(PROMO_ATIVA){
+      banner.classList.remove('hidden');
+      banner.textContent = TEXTO_BANNER + " → 65 99333-6651";
+      vagasBadge.textContent = "⚡ SÓ " + VAGAS_RESTANTES + " VAGAS RESTANTES - DE " + VAGAS_TOTAL;
+      vagasContador.textContent = "🔥 " + (VAGAS_TOTAL - VAGAS_RESTANTES) + " vagas preenchidas - Restam " + VAGAS_RESTANTES + " com bônus";
+      promoDesc.textContent = "Promoção com bônus AdZap grátis só essa semana.";
+      proBadge.textContent = "MAIS VENDIDO + BÔNUS LANÇAMENTO";
+      bonusBox.innerHTML = "<div class='font-bold text-[#D6FF00]'>🎁 BÔNUS DE LANÇAMENTO (R$794):</div><div class='mt-1'>✓ AdZap completo R$497 GRÁTIS</div><div>✓ 3 meses suporte Zap R$297 GRÁTIS</div>";
+    } else {
+      vagasBadge.textContent = "VAGAS ABERTAS - CUIABÁ E BRASIL";
+      vagasContador.textContent = "⚡ Entrega em 7 dias • Garantia total • 65 99333-6651";
+      promoDesc.textContent = "";
+      proBadge.textContent = "MAIS VENDIDO";
+      bonusBox.innerHTML = "<div class='text-zinc-300'>✓ Tudo completo sem bônus</div>";
+    }
+  </script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script></body>
+</html>
